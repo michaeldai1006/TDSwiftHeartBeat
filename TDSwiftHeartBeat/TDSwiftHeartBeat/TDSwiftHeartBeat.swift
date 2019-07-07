@@ -39,7 +39,7 @@ public class TDSwiftHeartBeat {
         // Request info
         guard let config = self.config else { return }
         
-        // Send request
-        TDSwiftRequest.request(urlString: config.urlString, method: config.method, body: config.body, headers: config.headers, timeOut: nil, completion: nil)
+        // Run selector
+        config.action()
     }
 }
