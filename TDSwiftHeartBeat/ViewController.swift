@@ -1,20 +1,21 @@
-//
-//  ViewController.swift
-//  TDSwiftHeartBeat
-//
-//  Created by Michael Dai on 7/7/19.
-//  Copyright © 2019 TDSwift. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBAction func startBtnClicked(_ sender: UIButton) {
+        _ = TDSwiftHeartBeat.shared.start()
+    }
+    
+    @IBAction func stopBtnClicked(_ sender: UIButton) {
+        _ = TDSwiftHeartBeat.shared.stop()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        TDSwiftHeartBeat.shared.config(config: TDSwiftHeartBeatConfig(timeInterval: 1.0,
+                                                                      urlString: "http://192.168.3.14:3000",
+                                                                      method: "GET",
+                                                                      body: nil,
+                                                                      headers: nil))
     }
-
-
 }
-
